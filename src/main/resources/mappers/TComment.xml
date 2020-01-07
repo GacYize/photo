@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alice.photo.dao.ICommentDao">
+  <resultMap id="BaseResultMap" type="com.alice.photo.model.TComment">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="photographerId" jdbcType="INTEGER" property="photographerid" />
+    <result column="comment" jdbcType="LONGVARCHAR" property="comment" />
+    <result column="createTime" jdbcType="DATE" property="createtime" />
+  </resultMap>
+  <select id="findByPhotographerId" resultType="com.alice.photo.vo.CommentVo">
+      SELECT a.`comment`,a.createTime,b.`name` FROM t_comment a,t_user b where a.userId=b.id
+      AND a.photographerId=#{pid}
+  </select>
+
+</mapper>
