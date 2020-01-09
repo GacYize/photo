@@ -4,33 +4,23 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Table(name = "t_photo_path")
+@Table(name = "t_brand")
 @Data
-public class PhotoPath {
+public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     /**
-     * 照片类型 1：产品照片，2：门店照片
+     * 品牌名称
      */
-    private Integer type;
+    @Column(name = "brandName")
+    private String brandname;
 
     /**
-     * 图片地址
+     * 介绍描述
      */
-    private String path;
-    /**
-     * 文件名
-     */
-    @Column(name = "file_name")
-    private String fileName;
-    /**
-     * 产品id
-     */
-    @Column(name = "product_id")
-    private Integer productId;
-
+    private String describe;
 
 
     @Override
@@ -40,9 +30,8 @@ public class PhotoPath {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", type=").append(type);
-        sb.append(", path=").append(path);
-        sb.append(", locationId=").append(productId);
+        sb.append(", brandname=").append(brandname);
+        sb.append(", describe=").append(describe);
         sb.append("]");
         return sb.toString();
     }

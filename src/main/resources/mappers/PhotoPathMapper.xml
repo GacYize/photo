@@ -8,7 +8,8 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="type" jdbcType="INTEGER" property="type" />
     <result column="path" jdbcType="VARCHAR" property="path" />
-    <result column="location_id" jdbcType="INTEGER" property="locationId" />
+    <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--

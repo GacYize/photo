@@ -20,7 +20,7 @@
     <!-- 静态资源默认servlet配置 -->
     <mvc:default-servlet-handler/>
     <!--配置允许放行的静态资源-->
-    <mvc:resources mapping="/**" location="/static/"/>
+    <mvc:resources mapping="/**" location="/WEB-INF/static/"/>
     <!--<mvc:resources mapping="/plugins/**" location="/static/"/>-->
     <!-- 配置jsp 显示ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

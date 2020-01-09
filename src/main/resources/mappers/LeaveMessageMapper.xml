@@ -26,4 +26,7 @@
     -->
     content
   </sql>
+  <delete id="deleteAll">
+    delete from t_leave_message
+  </delete>
 </mapper>

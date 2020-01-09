@@ -5,4 +5,5 @@ import com.alice.photo.model.LeaveMessage;
 
 public interface LeaveMessageDao extends BaseMapper<LeaveMessage> {
 
+    void deleteAll();
 }

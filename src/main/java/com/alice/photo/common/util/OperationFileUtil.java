@@ -12,15 +12,13 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.net.URLEncoder;
 import java.util.*;
 
 /**
- * @Description 操作文件工具类
  * @author LJ
+ * @Description 操作文件工具类
  * @Date 2016年6月8日 上午11:42:44
  * @Version v1.0
  */
@@ -29,9 +27,8 @@ public final class OperationFileUtil {
 
     /**
      * 文件下载
-     * 
-     * @param filePath
-     *            文件路径
+     *
+     * @param filePath 文件路径
      * @return
      * @throws UnsupportedEncodingException
      * @throws IOException
@@ -43,11 +40,9 @@ public final class OperationFileUtil {
 
     /**
      * 文件下载
-     * 
-     * @param filePath
-     *            文件路径
-     * @param fileName
-     *            文件名
+     *
+     * @param filePath 文件路径
+     * @param fileName 文件名
      * @return
      * @throws UnsupportedEncodingException
      * @throws IOException
@@ -58,11 +53,9 @@ public final class OperationFileUtil {
 
     /**
      * 文件下载辅助
-     * 
-     * @param filePath
-     *            文件路径
-     * @param fileName
-     *            文件名
+     *
+     * @param filePath 文件路径
+     * @param fileName 文件名
      * @return
      * @throws UnsupportedEncodingException
      * @throws IOException
@@ -80,14 +73,12 @@ public final class OperationFileUtil {
 
     /**
      * 多文件上传
-     * 
-     * @param request
-     *            当前上传的请求
-     * @param basePath
-     *            保存文件的路径
+     *
+     * @param request  当前上传的请求
+     * @param basePath 保存文件的路径
+     * @return Map<String   ,       String> 返回上传文件的保存路径 以文件名做map的key;文件保存路径作为map的value
      * @throws IOException
      * @throws IllegalStateException
-     * @return Map<String, String> 返回上传文件的保存路径 以文件名做map的key;文件保存路径作为map的value
      */
     public static Map<String, String> multiFileUpload(HttpServletRequest request, String basePath) throws IllegalStateException, IOException {
         if (!(new File(basePath).isDirectory())) {
@@ -98,20 +89,17 @@ public final class OperationFileUtil {
 
     /**
      * 多文件上传
-     * 
-     * @param request
-     *            当前上传的请求
-     * @param basePath
-     *            保存文件的路径
-     * @param exclude
-     *            排除文件名字符串,以逗号分隔的,默认无可传null
+     *
+     * @param request  当前上传的请求
+     * @param basePath 保存文件的路径
+     * @param exclude  排除文件名字符串,以逗号分隔的,默认无可传null
      * @return
      * @throws IllegalStateException
      * @throws IOException
      */
     public static Map<String, String> multiFileUpload(HttpServletRequest request, String basePath, String exclude) throws IllegalStateException, IOException {
         if (!(new File(basePath).isDirectory())) {
-            throw new IllegalArgumentException("basePath 参数必须是文件夹路径"+basePath);
+            throw new IllegalArgumentException("basePath 参数必须是文件夹路径" + basePath);
         }
 
         return multifileUploadAssist(request, basePath, exclude);
@@ -119,13 +107,10 @@ public final class OperationFileUtil {
 
     /**
      * 多文件上传辅助
-     * 
-     * @param request
-     *            当前上传的请求
-     * @param basePath
-     *            保存文件的路径
-     * @param exclude
-     *            排除文件名字符串,以逗号分隔的,默认无可传null
+     *
+     * @param request  当前上传的请求
+     * @param basePath 保存文件的路径
+     * @param exclude  排除文件名字符串,以逗号分隔的,默认无可传null
      * @return
      * @throws IOException
      */
@@ -160,7 +145,7 @@ public final class OperationFileUtil {
 
     /**
      * 将文件名转变为UUID命名的 ,保留文件后缀
-     * 
+     *
      * @param filename
      * @return
      */
@@ -171,7 +156,7 @@ public final class OperationFileUtil {
 
     /**
      * 删除文件
-     * 
+     *
      * @param filePath
      */
     public static void deleteFile(String filePath) {
@@ -183,5 +168,41 @@ public final class OperationFileUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 图片上传
+     *
+     * @param srcfile
+     * @return
+     * @throws IllegalStateException
+     * @throws IOException
+     * @Title upload
+     */
+    public static String upload(MultipartFile srcfile,String path) throws Exception {
+        String filename = srcfile.getOriginalFilename();
+        if(srcfile == null || srcfile.isEmpty()){
+            throw new Exception("文件为空");
+        }
+        String filetype =  filename.substring(filename.lastIndexOf(".")+1);
+        File basedir = new File(path);
+        if(!basedir.exists()){
+            basedir.mkdirs();
+        }
+        String savefilename = UUID.randomUUID().toString() + "." + filetype;
+        File savefile = new File(path, savefilename);
+        try(
+                FileOutputStream os = new FileOutputStream(savefile);
+                InputStream inputStream = srcfile.getInputStream();
+        ) {
+            byte[] b = new byte[2048];
+            int length;
+            while ((length = inputStream.read(b)) > 0) {
+                os.write(b, 0, length);
+            }
+        }catch(Exception var1){
+            throw new Exception("文件上传错误");
+        }
+        return savefile.getPath();
     }
 }
