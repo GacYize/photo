@@ -149,7 +149,7 @@ public class AdminManageController {
     }
 
     /**
-     * 多文件上传
+     * 文件上传
      *
      * @param request
      * @param type               1：产品照片，2：门店照片
@@ -210,5 +210,7 @@ public class AdminManageController {
         productDao.deleteByPrimaryKey(id);
         return returnResult.setStatus(ReturnCodeType.SUCCESS);
     }
+
+
 
 }

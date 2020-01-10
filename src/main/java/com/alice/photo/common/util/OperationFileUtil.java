@@ -76,13 +76,13 @@ public final class OperationFileUtil {
      *
      * @param request  当前上传的请求
      * @param basePath 保存文件的路径
-     * @return Map<String   ,       String> 返回上传文件的保存路径 以文件名做map的key;文件保存路径作为map的value
+     * @return Map<String       ,               String> 返回上传文件的保存路径 以文件名做map的key;文件保存路径作为map的value
      * @throws IOException
      * @throws IllegalStateException
      */
     public static Map<String, String> multiFileUpload(HttpServletRequest request, String basePath) throws IllegalStateException, IOException {
         if (!(new File(basePath).isDirectory())) {
-            throw new IllegalArgumentException("basePath 参数必须是文件夹路径"+basePath);
+            throw new IllegalArgumentException("basePath 参数必须是文件夹路径" + basePath);
         }
         return multifileUploadAssist(request, basePath, null);
     }
@@ -179,19 +179,19 @@ public final class OperationFileUtil {
      * @throws IOException
      * @Title upload
      */
-    public static String upload(MultipartFile srcfile,String path) throws Exception {
+    public static String upload(MultipartFile srcfile, String path) throws Exception {
         String filename = srcfile.getOriginalFilename();
-        if(srcfile == null || srcfile.isEmpty()){
+        if (srcfile == null || srcfile.isEmpty()) {
             throw new Exception("文件为空");
         }
-        String filetype =  filename.substring(filename.lastIndexOf(".")+1);
+        String filetype = filename.substring(filename.lastIndexOf(".") + 1);
         File basedir = new File(path);
-        if(!basedir.exists()){
+        if (!basedir.exists()) {
             basedir.mkdirs();
         }
         String savefilename = UUID.randomUUID().toString() + "." + filetype;
         File savefile = new File(path, savefilename);
-        try(
+        try (
                 FileOutputStream os = new FileOutputStream(savefile);
                 InputStream inputStream = srcfile.getInputStream();
         ) {
@@ -200,9 +200,10 @@ public final class OperationFileUtil {
             while ((length = inputStream.read(b)) > 0) {
                 os.write(b, 0, length);
             }
-        }catch(Exception var1){
+        } catch (Exception var1) {
             throw new Exception("文件上传错误");
         }
-        return savefile.getPath();
+        String savefilePath = savefile.getPath().split("static")[1];
+        return savefilePath;
     }
 }
