@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <display-name>ChatRobot</display-name>
-    <description>ChatRobot_Alpha_0.0.1</description>
+    <display-name>photo</display-name>
+    <description>photo dome</description>
 
     <!-- 编码过滤器 -->
     <filter>
@@ -56,6 +56,7 @@
         <url-pattern>/manage/page/*</url-pattern>
         <url-pattern>/manage/home.html</url-pattern>
         <url-pattern>/manage/index.html</url-pattern>
+        <url-pattern>/admin/manage/*</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>LoginFilter</filter-name>

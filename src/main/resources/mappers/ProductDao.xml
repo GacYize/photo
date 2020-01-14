@@ -17,6 +17,6 @@
         id, name, comment
     </sql>
     <select id="findByType" resultType="com.alice.photo.model.Product">
-    select * from t_product where type+#{type}
+    select * from t_product where type=#{type}
   </select>
 </mapper>
