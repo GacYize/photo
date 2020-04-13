@@ -6,5 +6,7 @@ package test.dome.proxy;
  * @date 2020/4/13 16:56
  */
 public interface IPeople {
-    void word();
+    void work();
+
+    void say(String text);
 }
