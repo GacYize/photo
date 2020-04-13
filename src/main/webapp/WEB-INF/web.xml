@@ -40,7 +40,7 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>/index.html</welcome-file>
+        <welcome-file>/static/index.html</welcome-file>
     </welcome-file-list>
     <!--登陆拦截-->
     <filter>

@@ -1281,7 +1281,7 @@ pathAnim = {
 		 * @param {Function} fn
 		 */
 		map: function (arr, fn) {
-			//return jQuery.map(arr, fn);
+			//return jQuery.collection(arr, fn);
 			var results = [],
 				i = 0,
 				len = arr.length;
@@ -12427,7 +12427,7 @@ Point.prototype = {
 			valuePrefix = seriesTooltipOptions.valuePrefix || '',
 			valueSuffix = seriesTooltipOptions.valueSuffix || '';
 			
-		// Loop over the point array map and replace unformatted values with sprintf formatting markup
+		// Loop over the point array collection and replace unformatted values with sprintf formatting markup
 		each(series.pointArrayMap || ['y'], function (key) {
 			key = '{point.' + key; // without the closing bracket
 			if (valuePrefix || valueSuffix) {
@@ -15260,7 +15260,7 @@ var AreaSeries = extendClass(Series, {
 			x;
 
 		if (this.options.stacking && !this.cropped) { // cropped causes artefacts in Stock, and perf issue
-			// Create a map where we can quickly look up the points by their X value.
+			// Create a collection where we can quickly look up the points by their X value.
 			for (i = 0; i < points.length; i++) {
 				pointMap[points[i].x] = points[i];
 			}

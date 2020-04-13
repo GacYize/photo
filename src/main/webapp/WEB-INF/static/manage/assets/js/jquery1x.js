@@ -562,7 +562,7 @@ jQuery.extend({
 	support: support
 });
 
-// Populate the class2type map
+// Populate the class2type collection
 jQuery.each("Boolean Number String Function Array Date RegExp Object Error".split(" "), function(i, name) {
 	class2type[ "[object " + name + "]" ] = name.toLowerCase();
 });
@@ -2212,7 +2212,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 			// Get initial elements from seed or context
 			elems = seed || multipleContexts( selector || "*", context.nodeType ? [ context ] : context, [] ),
 
-			// Prefilter to get matcher input, preserving a map for seed-results synchronization
+			// Prefilter to get matcher input, preserving a collection for seed-results synchronization
 			matcherIn = preFilter && ( seed || !selector ) ?
 				condense( elems, preMap, preFilter, context, xml ) :
 				elems,
@@ -5170,7 +5170,7 @@ jQuery.fn.extend({
 	on: function( types, selector, data, fn, /*INTERNAL*/ one ) {
 		var type, origFn;
 
-		// Types can be a map of types/handlers
+		// Types can be a collection of types/handlers
 		if ( typeof types === "object" ) {
 			// ( types-Object, selector, data )
 			if ( typeof selector !== "string" ) {
@@ -5303,7 +5303,7 @@ var nodeNames = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figca
 	wrapMap = {
 		option: [ 1, "<select multiple='multiple'>", "</select>" ],
 		legend: [ 1, "<fieldset>", "</fieldset>" ],
-		area: [ 1, "<map>", "</map>" ],
+		area: [ 1, "<collection>", "</collection>" ],
 		param: [ 1, "<object>", "</object>" ],
 		thead: [ 1, "<table>", "</table>" ],
 		tr: [ 2, "<table><tbody>", "</tbody></table>" ],
@@ -8733,7 +8733,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 		// Work with a copy of dataTypes in case we need to modify it for conversion
 		dataTypes = s.dataTypes.slice();
 
-	// Create converters map with lowercased keys
+	// Create converters collection with lowercased keys
 	if ( dataTypes[ 1 ] ) {
 		for ( conv in s.converters ) {
 			converters[ conv.toLowerCase() ] = s.converters[ conv ];

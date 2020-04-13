@@ -7,7 +7,7 @@
  */
 
 /* 
- * See www.highcharts.com/studies/world-map.htm for use case.
+ * See www.highcharts.com/studies/world-collection.htm for use case.
  *
  * To do:
  * - Optimize long variable names and alias adapter methods and Highcharts namespace variables
@@ -49,7 +49,7 @@
 		return 'rgba(' + rgba.join(',') + ')';
 	}
 
-	// Set the default map navigation options
+	// Set the default collection navigation options
 	defaultOptions.mapNavigation = {
 		buttonOptions: {
 			align: 'right',
@@ -109,7 +109,7 @@
 		return path;
 	};
 
-	// A placeholder for map definitions
+	// A placeholder for collection definitions
 	Highcharts.maps = {};
 	
 	/**
@@ -133,7 +133,7 @@
 		// Call base to reach normal cartesian series (like mappoint)
 		proceed.call(this);
 
-		// Run extremes logic for map and mapline
+		// Run extremes logic for collection and mapline
 		dataMin = pick(this.dataMin, Number.MAX_VALUE);
 		dataMax = pick(this.dataMax, Number.MIN_VALUE);
 		each(this.series, function (series, i) {
@@ -171,7 +171,7 @@
 			
 			mapRatio = (xAxis.max - xAxis.min) / (this.max - this.min);
 			
-			// What axis to pad to put the map in the middle
+			// What axis to pad to put the collection in the middle
 			padAxis = mapRatio > plotRatio ? this : xAxis;
 			
 			// Pad it
@@ -321,7 +321,7 @@
 		},
 
 		/**
-		 * Zoom the map in or out by a certain amount. Less than 1 zooms in, greater than 1 zooms out.
+		 * Zoom the collection in or out by a certain amount. Less than 1 zooms in, greater than 1 zooms out.
 		 */
 		mapZoom: function (howMuch, centerXArg, centerYArg) {
 
@@ -371,7 +371,7 @@
 	});
 	
 	/**
-	 * Extend the default options with map options
+	 * Extend the default options with collection options
 	 */
 	plotOptions.map = merge(plotOptions.scatter, {
 		animation: false, // makes the complex shapes slow
@@ -645,7 +645,7 @@
 		},
 
 		/**
-		 * Get the bounding box of all paths in the map combined.
+		 * Get the bounding box of all paths in the collection combined.
 		 */
 		getBox: function (paths) {
 			var maxX = Number.MIN_VALUE, 

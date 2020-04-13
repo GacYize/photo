@@ -191,9 +191,9 @@
   }
 
   /**
-   * map a flexible set of arguments into a single returned object
+   * collection a flexible set of arguments into a single returned object
    * if args.length is already one just return it, otherwise
-   * use the properties argument to map the unnamed args to
+   * use the properties argument to collection the unnamed args to
    * object properties
    * so in the latter case:
    * mapArguments(["foo", $.noop], ["message", "callback"])
@@ -229,7 +229,7 @@
       // the base options object for this type of dialog (often just buttons)
       defaults,
       // args could be an object or array; if it's an array properties will
-      // map it to a proper options object
+      // collection it to a proper options object
       mapArguments(
         args,
         properties

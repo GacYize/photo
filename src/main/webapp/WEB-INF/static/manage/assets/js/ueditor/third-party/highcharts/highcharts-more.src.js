@@ -630,7 +630,7 @@ wrap(tickProto, 'getMarkPath', function (proceed, x, y, tickLength, tickWidth, h
  */
 
 /**
- * Extend the default options with map options
+ * Extend the default options with collection options
  */
 defaultPlotOptions.arearange = merge(defaultPlotOptions.area, {
 	lineWidth: 1,

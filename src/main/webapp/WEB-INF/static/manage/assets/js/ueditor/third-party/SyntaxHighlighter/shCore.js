@@ -3104,7 +3104,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 			'getprotobyname getprotobynumber getprotoent getpwent getpwnam getpwuid ' + 
 			'getservbyname getservbyport getservent getsockname getsockopt glob ' + 
 			'gmtime grep hex index int ioctl join keys kill lc lcfirst length link ' + 
-			'listen localtime lock log lstat map mkdir msgctl msgget msgrcv msgsnd ' + 
+			'listen localtime lock log lstat collection mkdir msgctl msgget msgrcv msgsnd ' + 
 			'oct open opendir ord pack pipe pop pos print printf prototype push ' + 
 			'quotemeta rand read readdir readline readlink readpipe recv rename ' + 
 			'reset reverse rewinddir rindex rmdir scalar seek seekdir select semctl ' + 
@@ -3327,7 +3327,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 					'chr classmethod cmp coerce compile complex delattr dict dir ' +
 					'divmod enumerate eval execfile file filter float format frozenset ' +
 					'getattr globals hasattr hash help hex id input int intern ' +
-					'isinstance issubclass iter len list locals long map max min next ' +
+					'isinstance issubclass iter len list locals long collection max min next ' +
 					'object oct open ord pow print property range raw_input reduce ' +
 					'reload repr reversed round set setattr slice sorted staticmethod ' +
 					'str sum super tuple type type unichr unicode vars xrange zip';

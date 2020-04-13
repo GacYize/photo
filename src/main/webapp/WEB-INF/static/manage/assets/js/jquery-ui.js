@@ -14931,7 +14931,7 @@ $.effects.animateClass = function( value, duration, easing, callback ) {
 			applyClassChange,
 			allAnimations = o.children ? animated.find( "*" ).addBack() : animated;
 
-		// map the animated objects to store the original styles.
+		// collection the animated objects to store the original styles.
 		allAnimations = allAnimations.map(function() {
 			var el = $( this );
 			return {
@@ -14950,7 +14950,7 @@ $.effects.animateClass = function( value, duration, easing, callback ) {
 		};
 		applyClassChange();
 
-		// map all animated objects again - calculate new styles and diff
+		// collection all animated objects again - calculate new styles and diff
 		allAnimations = allAnimations.map(function() {
 			this.end = getElementStyles( this.el[ 0 ] );
 			this.diff = styleDifference( this.start, this.end );
@@ -14960,7 +14960,7 @@ $.effects.animateClass = function( value, duration, easing, callback ) {
 		// apply original class
 		animated.attr( "class", baseClass );
 
-		// map all animated objects again - this time collecting a promise
+		// collection all animated objects again - this time collecting a promise
 		allAnimations = allAnimations.map(function() {
 			var styleInfo = this,
 				dfd = $.Deferred(),

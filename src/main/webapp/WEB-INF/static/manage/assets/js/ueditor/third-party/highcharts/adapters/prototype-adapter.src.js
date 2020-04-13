@@ -261,7 +261,7 @@ return {
 		return arr.findAll(fn);
 	},
 
-	// um, map
+	// um, collection
 	map: function (arr, fn) {
 		return arr.map(fn);
 	},

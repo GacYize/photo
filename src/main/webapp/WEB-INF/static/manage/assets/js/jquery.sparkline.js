@@ -108,8 +108,8 @@
 *   tooltipPrefix - A string to prepend to each field displayed in a tooltip
 *   tooltipSuffix - A string to append to each field displayed in a tooltip
 *   tooltipSkipNull - If true then null values will not have a tooltip displayed (defaults to true)
-*   tooltipValueLookups - An object or range map to map field values to tooltip strings
-*       (eg. to map -1 to "Lost", 0 to "Draw", and 1 to "Win")
+*   tooltipValueLookups - An object or range collection to collection field values to tooltip strings
+*       (eg. to collection -1 to "Lost", 0 to "Draw", and 1 to "Win")
 *   numberFormatter - Optional callback for formatting numbers in tooltips
 *   numberDigitGroupSep - Character to use for group separator in numbers "1,234" - Defaults to ","
 *   numberDecimalMark - Character to use for the decimal point when formatting numbers - Defaults to "."
@@ -131,7 +131,7 @@
 *       defaultPixelsPerValue - Defaults to 3 pixels of width for each value in the chart
 *       highlightSpotColor - The color to use for drawing a highlight spot on mouseover - Set to null to disable
 *       highlightLineColor - The color to use for drawing a highlight line on mouseover - Set to null to disable
-*       valueSpots - Specify which points to draw spots on, and in which color.  Accepts a range map
+*       valueSpots - Specify which points to draw spots on, and in which color.  Accepts a range collection
 *
 *   bar - Bar chart.  Options:
 *       barColor - Color of bars for postive values
@@ -140,7 +140,7 @@
 *       nullColor - Color of bars with null values - Defaults to omitting the bar entirely
 *       barWidth - Width of bars in pixels
 *       colorMap - Optional mappnig of values to colors to override the *BarColor values above
-*                  can be an Array of values to control the color of individual bars or a range map
+*                  can be an Array of values to control the color of individual bars or a range collection
 *                  to specify colors for individual ranges of values
 *       barSpacing - Gap between bars in pixels
 *       zeroAxis - Centers the y-axis around zero if true
@@ -152,7 +152,7 @@
 *       barWidth - Width of bars in pixels
 *       barSpacing - Gap between bars in pixels
 *       colorMap - Optional mappnig of values to colors to override the *BarColor values above
-*                  can be an Array of values to control the color of individual bars or a range map
+*                  can be an Array of values to control the color of individual bars or a range collection
 *                  to specify colors for individual ranges of values
 *
 *   discrete - Options:
@@ -294,7 +294,7 @@
                 negBarColor: '#f44',
                 zeroBarColor: '#999',
                 colorMap: {},
-                tooltipFormat: new SPFormat('<span style="color: {{color}}">&#9679;</span> {{value:map}}'),
+                tooltipFormat: new SPFormat('<span style="color: {{color}}">&#9679;</span> {{value:collection}}'),
                 tooltipValueLookups: { map: { '-1': 'Loss', '0': 'Draw', '1': 'Win' } }
             },
             // Defaults for discrete charts
@@ -2259,7 +2259,7 @@
 
             pie._super.init.call(this, el, values, options, width, height);
 
-            this.shapes = {}; // map shape ids to value offsets
+            this.shapes = {}; // collection shape ids to value offsets
             this.valueShapes = {}; // maps value offsets to shape ids
             this.values = values = $.map(values, Number);
 

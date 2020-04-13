@@ -3530,7 +3530,7 @@ Popover.prototype = {
 
 ;;
 
-/* A "coordinate map" converts pixel coordinates into an associated cell, which has an associated date
+/* A "coordinate collection" converts pixel coordinates into an associated cell, which has an associated date
 ------------------------------------------------------------------------------------------------------------------------
 Common interface:
 
@@ -3541,7 +3541,7 @@ Common interface:
 
 */
 
-/* Coordinate map for a grid component
+/* Coordinate collection for a grid component
 ----------------------------------------------------------------------------------------------------------------------*/
 
 function GridCoordMap(grid) {
@@ -3633,7 +3633,7 @@ GridCoordMap.prototype = {
 };
 
 
-/* Coordinate map that is a combination of multiple other coordinate maps
+/* Coordinate collection that is a combination of multiple other coordinate maps
 ----------------------------------------------------------------------------------------------------------------------*/
 
 function ComboCoordMap(coordMaps) {
@@ -5086,7 +5086,7 @@ $.extend(Grid.prototype, {
 			zIndex: 2 // one above the .fc-view
 		});
 
-		// Tracks mouse movement over the *view's* coordinate map. Allows dragging and dropping between subcomponents
+		// Tracks mouse movement over the *view's* coordinate collection. Allows dragging and dropping between subcomponents
 		// of the view.
 		var dragListener = new DragListener(view.coordMap, {
 			distance: 5,
@@ -5214,7 +5214,7 @@ $.extend(Grid.prototype, {
 			view.showEvent(event);
 		}
 
-		// Tracks mouse movement over the *grid's* coordinate map
+		// Tracks mouse movement over the *grid's* coordinate collection
 		dragListener = new DragListener(this.coordMap, {
 			distance: 5,
 			scroll: view.opt('dragScroll'),

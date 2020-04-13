@@ -137,7 +137,11 @@ public class CommentController {
         return returnResult;
     }
 
-
+    /**
+     * 客户留言
+     * @param content
+     * @return
+     */
     @RequestMapping(value = "saveMessage", method = RequestMethod.GET)
     @ResponseBody
     public ReturnResult saveMessage(String content) {

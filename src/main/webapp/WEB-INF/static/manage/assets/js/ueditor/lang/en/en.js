@@ -566,7 +566,7 @@ UE.I18N['en'] = {
             lang_address:"Address",
             city:{value:"Beijing"},
             lang_search:"Search",
-            lang_dynamicmap:"Dynamic map"
+            lang_dynamicmap:"Dynamic collection"
         },
         cityMsg:"Please enter the city name!",
         errorMsg:"Can't find the place!"

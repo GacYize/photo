@@ -338,7 +338,7 @@
 	
 	
 	/**
-	 * Convert from camel case parameters to Hungarian, based on a Hungarian map
+	 * Convert from camel case parameters to Hungarian, based on a Hungarian collection
 	 * created by _fnHungarianMap.
 	 *  @param {object} src The model object which holds all parameters that can be
 	 *    mapped.
@@ -422,7 +422,7 @@
 	
 	/**
 	 * Map one parameter onto another
-	 *  @param {object} o Object to map
+	 *  @param {object} o Object to collection
 	 *  @param {*} knew The new parameter name
 	 *  @param {*} old The old parameter name
 	 */
@@ -437,7 +437,7 @@
 	 * Provide backwards compatibility for the main DT options. Note that the new
 	 * options are mapped onto the old parameters, so this is an external interface
 	 * change only.
-	 *  @param {object} init Object to map
+	 *  @param {object} init Object to collection
 	 */
 	function _fnCompatOpts ( init )
 	{
@@ -470,7 +470,7 @@
 	 * Provide backwards compatibility for column options. Note that the new options
 	 * are mapped onto the old parameters, so this is an external interface change
 	 * only.
-	 *  @param {object} init Object to map
+	 *  @param {object} init Object to collection
 	 */
 	function _fnCompatCols ( init )
 	{
@@ -5043,7 +5043,7 @@
 	 *  @param {object} ret target object
 	 *  @param {object} src source object
 	 *  @param {string} name property
-	 *  @param {string} [mappedName] name to map too - optional, name used if not given
+	 *  @param {string} [mappedName] name to collection too - optional, name used if not given
 	 *  @memberof DataTable#oApi
 	 */
 	function _fnMap( ret, src, name, mappedName )
@@ -9480,7 +9480,7 @@
 	 * breaking backwards compatibility utterly with this change, the Hungarian
 	 * version is still, internally the primary interface, but is is not documented
 	 * - hence the @name tags in each doc comment. This allows a Javascript function
-	 * to create a map from Hungarian notation to camel case (going the other direction
+	 * to create a collection from Hungarian notation to camel case (going the other direction
 	 * would require each property to be listed, which would at around 3K to the size
 	 * of DataTables, while this method is about a 0.5K hit.
 	 *
@@ -12335,7 +12335,7 @@
 		/**
 		 * This parameter is only used in DataTables' server-side processing. It can
 		 * be exceptionally useful to know what columns are being displayed on the
-		 * client side, and to map these to database fields. When defined, the names
+		 * client side, and to collection these to database fields. When defined, the names
 		 * also allow DataTables to reorder information from the server if it comes
 		 * back in an unexpected order (i.e. if you switch your columns around on the
 		 * client-side, your server-side code does not also need updating).
@@ -13688,7 +13688,7 @@
 		 *    // Ordering using `input` node values
 		 *    $.fn.dataTable.ext.order['dom-text'] = function  ( settings, col )
 		 *    {
-		 *      return this.api().column( col, {order:'index'} ).nodes().map( function ( td, i ) {
+		 *      return this.api().column( col, {order:'index'} ).nodes().collection( function ( td, i ) {
 		 *        return $('input', td).val();
 		 *      } );
 		 *    }

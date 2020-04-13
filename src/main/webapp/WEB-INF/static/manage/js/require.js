@@ -198,7 +198,7 @@ var requirejs, require, define;
         var inCheckLoaded, Module, context, handlers,
             checkLoadedTimeoutId,
             config = {
-                //Defaults. Do not set a default for map
+                //Defaults. Do not set a default for collection
                 //config to speed up normalize(), which
                 //will run faster if there is no default.
                 waitSeconds: 7,
@@ -260,7 +260,7 @@ var requirejs, require, define;
          * @param {String} name the relative name
          * @param {String} baseName a real name that the name arg is relative
          * to.
-         * @param {Boolean} applyMap apply the map config to the value. Should
+         * @param {Boolean} applyMap apply the collection config to the value. Should
          * only be done if this normalization is for a dependency ID.
          * @returns {String} normalized name
          */
@@ -278,7 +278,7 @@ var requirejs, require, define;
 
                 // If wanting node ID compatibility, strip .js from end
                 // of IDs. Have to do this here, and not in nameToUrl
-                // because node allows either .js or non .js to map
+                // because node allows either .js or non .js to collection
                 // to same file.
                 if (config.nodeIdCompat && jsSuffixRegExp.test(name[lastIndex])) {
                     name[lastIndex] = name[lastIndex].replace(jsSuffixRegExp, '');
@@ -299,7 +299,7 @@ var requirejs, require, define;
                 name = name.join('/');
             }
 
-            //Apply map config if available.
+            //Apply collection config if available.
             if (applyMap && map && (baseParts || starMap)) {
                 nameParts = name.split('/');
 
@@ -326,9 +326,9 @@ var requirejs, require, define;
                         }
                     }
 
-                    //Check for a star map match, but just hold on to it,
+                    //Check for a star collection match, but just hold on to it,
                     //if there is a shorter segment match later in a matching
-                    //config, then favor over this star map.
+                    //config, then favor over this star collection.
                     if (!foundStarMap && starMap && getOwn(starMap, nameSegment)) {
                         foundStarMap = getOwn(starMap, nameSegment);
                         starI = i;
@@ -373,7 +373,7 @@ var requirejs, require, define;
                 pathConfig.shift();
                 context.require.undef(id);
 
-                //Custom require that does not do map translation, since
+                //Custom require that does not do collection translation, since
                 //ID is "absolute", already mapped/resolved.
                 context.makeRequire(null, {
                     skipMap: true
@@ -402,12 +402,12 @@ var requirejs, require, define;
          * also normalize the name via require.normalize()
          *
          * @param {String} name the module name
-         * @param {String} [parentModuleMap] parent module map
+         * @param {String} [parentModuleMap] parent module collection
          * for the module name, used to resolve relative names.
          * @param {Boolean} isNormalized: is the ID already normalized.
          * This is true if this call is done for a define() module ID.
-         * @param {Boolean} applyMap: apply the map config to the ID.
-         * Should only be true if this map is for a dependency.
+         * @param {Boolean} applyMap: apply the collection config to the ID.
+         * Should only be true if this collection is for a dependency.
          *
          * @returns {Object}
          */
@@ -459,8 +459,8 @@ var requirejs, require, define;
                     //A regular module.
                     normalizedName = normalize(name, parentName, applyMap);
 
-                    //Normalized name may be a plugin ID due to map config
-                    //application in normalize. The map config values must
+                    //Normalized name may be a plugin ID due to collection config
+                    //application in normalize. The collection config values must
                     //already be normalized, so do not need to redo that part.
                     nameParts = splitPrefix(normalizedName);
                     prefix = nameParts[0];
@@ -948,7 +948,7 @@ var requirejs, require, define;
                             enableBuildCallback: true
                         });
 
-                    //If current map is not normalized, wait for that
+                    //If current collection is not normalized, wait for that
                     //normalized name to load instead of continuing.
                     if (this.map.unnormalized) {
                         //Normalize the ID if the plugin allows it.
@@ -959,7 +959,7 @@ var requirejs, require, define;
                         }
 
                         //prefix and name should already be normalized, no need
-                        //for applying map config again either.
+                        //for applying collection config again either.
                         normalizedMap = makeModuleMap(map.prefix + '!' + name,
                                                       this.map.parentMap);
                         on(normalizedMap,
@@ -1291,7 +1291,7 @@ var requirejs, require, define;
                     }
                 });
 
-                //Reverse map the bundles
+                //Reverse collection the bundles
                 if (cfg.bundles) {
                     eachProp(cfg.bundles, function (value, prop) {
                         each(value, function (v) {
@@ -1428,7 +1428,7 @@ var requirejs, require, define;
 
                         requireMod = getModule(makeModuleMap(null, relMap));
 
-                        //Store if map config should be applied to this require
+                        //Store if collection config should be applied to this require
                         //call for dependencies.
                         requireMod.skipMap = options.skipMap;
 

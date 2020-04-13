@@ -1980,7 +1980,7 @@ Makes editable any HTML element on the page. Applied as jQuery method.
             Runs client-side validation for all matched editables
             
             @method validate()
-            @returns {Object} validation errors map
+            @returns {Object} validation errors collection
             @example
             $('#username, #fullname').editable('validate');
             // possible result:

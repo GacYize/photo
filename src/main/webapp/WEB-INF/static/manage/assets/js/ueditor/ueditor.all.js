@@ -27665,7 +27665,7 @@ UE.ui = baidu.editor.ui = {};
         'link':'~/dialogs/link/link.html',
         'spechars':'~/dialogs/spechars/spechars.html',
         'searchreplace':'~/dialogs/searchreplace/searchreplace.html',
-        'map':'~/dialogs/map/map.html',
+        'map':'~/dialogs/collection/collection.html',
         'gmap':'~/dialogs/gmap/gmap.html',
         'insertvideo':'~/dialogs/video/video.html',
         'help':'~/dialogs/help/help.html',

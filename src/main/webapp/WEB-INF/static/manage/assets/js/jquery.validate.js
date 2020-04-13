@@ -441,7 +441,7 @@ $.extend( $.validator, {
 		// http://jqueryvalidation.org/Validator.showErrors/
 		showErrors: function( errors ) {
 			if ( errors ) {
-				// add items to error list and map
+				// add items to error list and collection
 				$.extend( this.errorMap, errors );
 				this.errorList = [];
 				for ( var name in errors ) {
