@@ -1,6 +1,4 @@
-package test.dome.thread;
-
-import test.dome.proxy.ProxyCGDome;
+package test.demo.thread;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
@@ -10,7 +8,7 @@ import java.util.function.Supplier;
  * @Description
  * @date 2020/4/14 10:58
  */
-public class ThreadLocalDome {
+public class ThreadLocalDemo {
     public static void main(String[] args) {
         ThreadLocal<Object> threadLocal = new ThreadLocal<>();
         threadLocal.set("t1");

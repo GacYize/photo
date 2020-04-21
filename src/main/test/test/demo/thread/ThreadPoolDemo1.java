@@ -1,4 +1,4 @@
-package test.dome.thread;
+package test.demo.thread;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @Description
  * @date 2020/4/13 11:08
  */
-public class ThreadPoolDome1 {
+public class ThreadPoolDemo1 {
     public static void main(String[] args) throws InterruptedException {
         ThreadPoolExecutor.CallerRunsPolicy callerRunsPolicy = new ThreadPoolExecutor.CallerRunsPolicy();
         ThreadPoolExecutor threadPoolExecutor =

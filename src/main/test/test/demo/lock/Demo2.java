@@ -1,15 +1,13 @@
-package test.dome.lock;
+package test.demo.lock;
 
 import org.junit.Test;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author ghj
  * @Description
  * @date 2020/3/13 16:03
  */
-public class Dome2 {
+public class Demo2 {
     static volatile private int num = 100;
     private final static Object o = new Object();
 

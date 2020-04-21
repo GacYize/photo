@@ -1,11 +1,11 @@
-package test.dome;
+package test.demo;
 
 /**
  * @author ghj
  * @Description
  * @date 2020/3/26 15:23
  */
-public class StringBufferDome {
+public class StringBufferDemo {
     public static void main(String[] args) {
 //        StringBuffer sb = new StringBuffer();
 //        StringBuilder sb=new StringBuilder();

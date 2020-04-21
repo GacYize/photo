@@ -5,7 +5,7 @@ import java.util.HashMap;
  * @Date: 2020/4/1 20:32
  * @Version 1.0
  */
-public class WaitDome {
+public class WaitDemo {
     public static void main(String[] args) throws InterruptedException {
         String str = new String("aaa");
         Object obj = new Object();

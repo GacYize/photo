@@ -1,28 +1,18 @@
-package test.dome.lock;
+package test.demo.lock;
 
 import org.junit.Test;
-import org.springframework.util.CollectionUtils;
 import redis.clients.jedis.Jedis;
-import test.dome.LocalJedis;
+import test.demo.LocalJedis;
 
-import javax.ejb.Local;
-import javax.rmi.CORBA.Util;
-import javax.servlet.jsp.jstl.fmt.LocaleSupport;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.YearMonth;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.LockSupport;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 /**
  * @author ghj
  * @Description
  * @date 2020/2/28 10:48
  */
-public class Dome1 {
+public class Demo1 {
     enum TestEnum {T1, T2}
 
     TestEnum d = TestEnum.T1;

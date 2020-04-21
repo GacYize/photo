@@ -1,11 +1,11 @@
-package test.dome.lock;
+package test.demo.lock;
 
 /**
  * @author ghj
  * @Description
  * @date 2020/4/8 14:48
  */
-public class LockThisDome {
+public class LockThisDemo {
     public static void main(String[] args) {
         new Thread(() -> {
             Main main = new Main();

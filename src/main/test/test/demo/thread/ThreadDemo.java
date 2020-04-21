@@ -1,15 +1,13 @@
-package test.dome.thread;
+package test.demo.thread;
 
-import java.io.Serializable;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author ghj
  * @Description
  * @date 2020/3/9 11:19
  */
-public class ThreadDome_1 {
+public class ThreadDemo {
     private static char[] charNum = "1234567".toCharArray();
     private static char[] charStr = "ABCDEFG".toCharArray();
     private static volatile boolean flag = true;

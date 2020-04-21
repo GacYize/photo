@@ -1,4 +1,4 @@
-package test.dome.proxy;
+package test.demo.proxy;
 
 
 import org.springframework.cglib.proxy.Enhancer;
@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
  * @Date: 2020/4/13 22:52
  * @Version 1.0
  */
-public class ProxyCGDome {
+public class ProxyCGDemo {
     public static void main(String[] args) {
         StudentCg studentCg = new StudentCg();
         ProxyFactory proxyFactory = new ProxyFactory(studentCg);

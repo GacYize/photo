@@ -1,13 +1,11 @@
-package test.dome;
-
-import java.util.concurrent.ThreadPoolExecutor;
+package test.demo;
 
 /**
  * @author ghj
  * @Description
  * @date 2020/3/17 14:10
  */
-public class SingleDome {
+public class SingleDemo {
     public static void main(String[] args) {
 
         new Thread(() -> {

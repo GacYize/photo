@@ -1,4 +1,4 @@
-package test.dome.lock;
+package test.demo.lock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Description
  * @date 2020/4/2 12:23
  */
-public class ReentrantLockDome1 {
+public class ReentrantLockDemo1 {
     public static void main(String[] args) {
         Object obj=new Object();
         ReentrantLock reentrantLock = new ReentrantLock();

@@ -1,16 +1,15 @@
-package test.dome;
+package test.demo;
 
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 
 /**
  * @author ghj
  * @Description
  * @date 2020/3/30 11:04
  */
-public class Dome {
+public class Demo {
     public static void main(String[] args) {
         Long a = 9L;
         Long b = 900L;

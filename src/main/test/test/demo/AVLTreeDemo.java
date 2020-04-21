@@ -1,13 +1,11 @@
-package test.dome;
-
-import javax.swing.tree.TreeNode;
+package test.demo;
 
 /**
  * @author ghj
  * @Description
  * @date 2020/3/31 11:58
  */
-public class AVLTreeDome {
+public class AVLTreeDemo {
     static class AVLNode {
         public int data;//保存节点数据
         public int depth;//保存节点深度

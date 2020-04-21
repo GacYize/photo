@@ -6,7 +6,7 @@ import java.util.Map;
  * @Date: 2020/2/20 20:42
  * @Version 1.0
  */
-public class Dome2 {
+public class Demo2 {
     public static void main(String[] args) {
         Double a = 0.01;
         Double b = 0.0;

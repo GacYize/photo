@@ -3,7 +3,7 @@
  * @Date: 2020/2/11 11:50
  * @Version 1.0
  */
-public class Dome1 {
+public class Demo1 {
     public static void main(String[] args) {
         Byte a = 100;
         Integer b = 100;

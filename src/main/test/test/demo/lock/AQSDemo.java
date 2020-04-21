@@ -1,4 +1,4 @@
-package test.dome.lock;
+package test.demo.lock;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -7,7 +7,7 @@ import java.util.concurrent.CountDownLatch;
  * @Description
  * @date 2020/4/8 14:37
  */
-public class AQSDome {
+public class AQSDemo {
     private static volatile Integer num = 0;//volatile只保证变量的可见性，不保证原子性
     private static CountDownLatch latch = new CountDownLatch(100);
 

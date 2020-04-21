@@ -1,11 +1,11 @@
-package test.dome;
+package test.demo;
 
 /**
  * @author ghj
  * @Description
  * @date 2020/3/31 15:02
  */
-public class AVLTreeDome2 {
+public class AVLTreeDemo2 {
     static class BTree {
         private int data;
         private BTree parent;

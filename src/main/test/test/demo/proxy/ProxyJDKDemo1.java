@@ -1,4 +1,4 @@
-package test.dome.proxy;
+package test.demo.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -9,7 +9,7 @@ import java.lang.reflect.Proxy;
  * @Description
  * @date 2020/4/13 16:35
  */
-public class ProxyJDKDome1 {
+public class ProxyJDKDemo1 {
     public static void main(String[] args) {
         IPeople student = new Student();
         ProxyFactory proxyFactory = new ProxyFactory(student);

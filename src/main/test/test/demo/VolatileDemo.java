@@ -1,13 +1,11 @@
-package test.dome;
-
-import java.io.Serializable;
+package test.demo;
 
 /**
  * @author ghj
  * @Description
  * @date 2020/3/17 11:17
  */
-public class VolatileDome {
+public class VolatileDemo {
     static volatile int a = 0;
 
     void add() {

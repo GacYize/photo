@@ -1,4 +1,4 @@
-package test.dome;
+package test.demo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Description
  * @date 2020/3/17 10:36
  */
-public class AtomicDome {
+public class AtomicDemo {
     static class A {
         volatile AtomicInteger a = new AtomicInteger(0);
 
@@ -31,7 +31,7 @@ public class AtomicDome {
     }
 
     public static void main(String[] args) {
-        AtomicDome vd = new AtomicDome();
+        AtomicDemo vd = new AtomicDemo();
         List<Thread> threadList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             threadList.add(new Thread(vd::add, "thread-" + i));

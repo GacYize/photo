@@ -1,4 +1,4 @@
-package test.dome;
+package test.demo;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @Description
  * @date 2020/3/26 10:58
  */
-public class ScannerDome {
+public class ScannerDemo {
     public static void main(String[] args) {
         while (true) {
             Scanner scanner = new Scanner(System.in);
