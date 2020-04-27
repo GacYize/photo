@@ -1,4 +1,4 @@
-package kafka;
+package test.demo.kafka;
 
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -22,6 +22,6 @@ public class ConsumerDemo {
         properties.load(inputStream);
         KafkaConsumer<Object, Object> consumer = new KafkaConsumer<>(properties);
         TopicPartition topic_1 = new TopicPartition("topic_1", 1);
-        consumer.beginningOffsets(Arrays.asList(topic_1));
+        consumer.subscribe(Arrays.asList("topic_1"));
     }
 }
