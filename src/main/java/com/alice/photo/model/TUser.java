@@ -74,4 +74,16 @@ public class TUser {
     public void setCreatetime(Date createtime) {
         this.createtime = createtime;
     }
+
+    @Override
+    public String toString() {
+        return "TUser{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", tel='" + tel + '\'' +
+                ", email='" + email + '\'' +
+                ", createtime=" + createtime +
+                '}';
+    }
 }

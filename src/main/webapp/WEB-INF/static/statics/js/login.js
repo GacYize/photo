@@ -1,6 +1,6 @@
 var code;
 
-var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+var codeChars = new Array(
 	'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 	'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
 
@@ -8,7 +8,7 @@ var canvas = document.getElementById("myCanvas");
 
 function createTextCode() {
 	code = "";
-	var codeLength = 6; //验证码的长度
+	var codeLength = 4; //验证码的长度
 	var checkCode = document.getElementById("codeshow");
 	for(var i = 0; i < codeLength; i++) {
 		var charNum = Math.floor(Math.random() * 52);
@@ -28,9 +28,9 @@ function createCanvasCode() {
 	var rand2 = codeChars[Math.floor(Math.random() * codeChars.length)];
 	var rand3 = codeChars[Math.floor(Math.random() * codeChars.length)];
 	var rand4 = codeChars[Math.floor(Math.random() * codeChars.length)];
-	var rand5 = codeChars[Math.floor(Math.random() * codeChars.length)];
-	var rand6 = codeChars[Math.floor(Math.random() * codeChars.length)];
-	code = rand1 + rand2 + rand3 + rand4 + rand5 + rand6;
+	// var rand5 = codeChars[Math.floor(Math.random() * codeChars.length)];
+	// var rand6 = codeChars[Math.floor(Math.random() * codeChars.length)];
+	code = rand1 + rand2 + rand3 + rand4;
 	// Fill the background  
 	context.fillStyle = "#ffffff";
 	context.fillRect(0, 0, canvas.width, canvas.height);
@@ -55,10 +55,10 @@ function createCanvasCode() {
 	context.fillText(rand3, 42, 20 + Math.floor(Math.random() * 10));
 	context.fillStyle = getRandomColor();
 	context.fillText(rand4, 62, 20 + Math.floor(Math.random() * 10));
-	context.fillStyle = getRandomColor();
-	context.fillText(rand5, 82, 20 + Math.floor(Math.random() * 10));
-	context.fillStyle = getRandomColor();
-	context.fillText(rand6, 102, 20 + Math.floor(Math.random() * 10));
+	// context.fillStyle = getRandomColor();
+	// context.fillText(rand5, 82, 20 + Math.floor(Math.random() * 10));
+	// context.fillStyle = getRandomColor();
+	// context.fillText(rand6, 102, 20 + Math.floor(Math.random() * 10));
 
 }
 

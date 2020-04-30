@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -44,7 +45,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = "login")
 	@ResponseBody
-	public ReturnResult login(TUser user, HttpSession session) {
+	public ReturnResult login( TUser user, HttpSession session) {
 		returnResult.setStatus(ReturnCodeType.FAILURE);
 
 		try {
@@ -53,11 +54,9 @@ public class UserController {
 				user.setPassword(null);
 				session.setAttribute("user", user);
 				returnResult.setStatus(ReturnCodeType.SUCCESS);
-
 			}
 		} catch (Exception e) {
 			logger.error("登录失败" + e);
-
 		}
 		return returnResult;
 
