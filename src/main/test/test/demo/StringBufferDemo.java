@@ -1,5 +1,7 @@
 package test.demo;
 
+import com.alice.photo.model.TUser;
+
 /**
  * @author ghj
  * @Description
@@ -35,6 +37,11 @@ public class StringBufferDemo {
 //        System.out.println("System.identityHashCode(str3) = " + System.identityHashCode(str3));
 //        System.out.println("System.identityHashCode(aa) = " + System.identityHashCode("aa"));
         System.out.println(Math.abs(50 % 3));
+
+
+        TUser tUser = new TUser();
+        tUser.setId(1).setEmail("aaa");
+
     }
 
 

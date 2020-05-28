@@ -18,6 +18,7 @@ public class UserTest {
 
     static class UserDome {
         private Integer age;
+        private String name;
 
         public UserDome(Integer age) {
             this.age = age;
@@ -28,12 +29,18 @@ public class UserTest {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             UserDome userDome = (UserDome) o;
-            return Objects.equals(age, userDome.age);
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return Objects.equals(age, userDome.age) &&
+                    Objects.equals(name, userDome.name);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(age);
+            return Objects.hash(age, name);
         }
 
         @Override

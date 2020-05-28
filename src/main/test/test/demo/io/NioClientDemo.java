@@ -32,7 +32,7 @@ public class NioClientDemo {
         while (true) {
             // 执行选择的操作，惟一阻塞方法
             sele.select();
-            Set<java.nio.channels.SelectionKey> keys = sele.selectedKeys();
+            Set<SelectionKey> keys = sele.selectedKeys();
             if (keys.size() > 0) {
                 Iterator<SelectionKey> it = keys.iterator();
                 while (it.hasNext()) {
@@ -46,7 +46,6 @@ public class NioClientDemo {
                         }
                         // 注册写事件到选择器
                         channel.register(sele, SelectionKey.OP_WRITE);
-
                     } else if (key.isWritable()) {
                         // 获取write的通道
                         SocketChannel channel = (SocketChannel) key.channel();
@@ -68,7 +67,6 @@ public class NioClientDemo {
                         }
                         String str = new String(buf.array());
                         System.out.println("server： " + str);
-
                         // 取消write操作的注册，防止多次write
                         key.cancel();
                     } else {
@@ -78,7 +76,6 @@ public class NioClientDemo {
                 // 从就绪的键集中删除已经处理的键
                 it.remove();
             }
-
         }
     }
 }

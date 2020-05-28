@@ -24,7 +24,7 @@ public class NioServerDemo {
         ssc.bind(new InetSocketAddress("127.0.0.1", 8080));
         // 2.设置ssc为非阻塞
         ssc.configureBlocking(false);
-        // 3.向选择器中注册ACCEPT操作
+        // 3.把这Selector对象注册到ServerSocketChannel 中，并设置好监听的事件，监听 SelectionKey.OP_ACCEPT
         ssc.register(sele, SelectionKey.OP_ACCEPT);
         System.out.println("start...");
         //不停的循环选择，不停地处理
@@ -79,6 +79,5 @@ public class NioServerDemo {
                 it.remove();
             }
         }
-
     }
 }

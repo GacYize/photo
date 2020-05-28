@@ -1,5 +1,7 @@
 package test.demo;
 
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 /**

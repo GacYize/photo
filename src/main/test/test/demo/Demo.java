@@ -3,6 +3,9 @@ package test.demo;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * @author ghj
@@ -54,6 +57,27 @@ public class Demo {
 
         }
 
+    }
+    @Test
+    public void LinkedListDemo(){
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("aaa");
+        linkedList.add("vvvv");
+        linkedList.stream().forEach((v)->{
+            System.out.println(v);
+        });
+    }
+
+    @Test
+    public void MapDemo(){
+        Map<String,Object> map=new HashMap<>();
+        map.put("name",null);
+        map.put("age",null);
+        map.put(null,"aaaa");
+        map.put(null,"bbbb");
+        //key可以存在一个null
+        System.out.println(map.get("age"));
+        System.out.println(map.get(null));
     }
 
     public boolean m1() {
